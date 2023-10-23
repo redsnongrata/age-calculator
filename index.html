@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Age Calculator</title>
+  </head>
+  <body>
+    <label for="birthdate">Enter your birthdate:</label>
+    <input type="date" id="birthdate" required />
+    <button type="button" onclick="calculateAge()">Calculate Age</button>
+    <div id="age"></div>
+
+    <script>
+      function calculateAge() {
+        var birthdate = new Date(document.getElementById("birthdate").value);
+        var currentDate = new Date();
+
+        if (birthdate > currentDate) {
+          alert("ta yzid osemih s3id");
+        } else {
+          var age = currentDate.getFullYear() - birthdate.getFullYear();
+
+          // Check if the birthday has occurred this year
+
+          document.getElementById("age").innerHTML =
+            "Your age is: " + age + " years.";
+        }
+      }
+    </script>
+  </body>
+</html>
